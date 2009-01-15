@@ -1,0 +1,9 @@
+Name: Variation for Kubrick Theme
+Name[de]: Variation für Kubrick Thema
+Author: Arne Brodowski
+Author URL: http://www.arnebrodowski.de/
+License: GPL
+Version: 0.1
+Description: A variation of the kubrick theme
+Description[de]: Eine Variation des Kubrick Themes
+Depends: kubrick_theme

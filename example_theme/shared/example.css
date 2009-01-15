@@ -1,0 +1,7 @@
+#header {
+	background: #73a0c5 url('images/kubrickheader.jpg') no-repeat bottom center;
+}
+
+#headerimg h1 a, #headerimg .description {
+    color:#ccc;
+}

@@ -42,8 +42,11 @@ Customization
 -------------
 
 The Kubrick theme provides a hook to allow customizazion without altering the
-code directly, for example changing the header image. I will soon add an 
-example to the repository to show how this can be done.
+code directly, for example changing the header image.
+
+The ``example_theme`` folder is a Zine plugin, which will customize the 
+``kubrick_theme`` by changing the header image and text-color in the header. 
+You can use this as a starting point to build your own customization.
 
 .. _Zine: http://zine.pocoo.org/
 .. _`Kubrick theme`: http://binarybonsai.com/wordpress/kubrick/
