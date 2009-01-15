@@ -36,22 +36,21 @@
 {% endmacro %}
 
 {% macro render_comment_editor(post, form) %}
-  {%- call form(class='comments') %}
+  {%- call form(id='commentform') %}
     {{ emit_event('before-comment-editor-rendered', post) }}
     {%- if not form.small_form %}
-    <dl>
-      {{ form.author.as_dd() }}
-      {{ form.email.as_dd() }}
-      {{ form.www.as_dd() }}
-    </dl>
+    
+      <p>{{ form.author.render(size=22, tabindex=1) }} {{ form.author.label.render() }} </p>
+      <p>{{ form.email.render(size=22, tabindex=2) }} {{ form.email.label.render() }} </p>
+      <p>{{ form.www.render(size=22, tabindex=3) }} {{ form.www.label.render() }} </p>
+    
     {%- endif %}
-    <div>{{ form.body() }}{{ form.parent() }}</div>
+    <p>{{ form.body(tabindex=4, rows=10) }}{{ form.parent() }}</p>
     <div id="comment-message">{# used for the reply callback #}</div>
     {{ emit_event('before-comment-editor-buttons-rendered', post) }}
-    <div class="actions">
-      <input type="submit" value="{{ _('Submit Comment') }}">
-      <input type="reset" value="{{ _('Reset Form') }}">
-    </div>
+    <p class="actions">
+      <input type="submit" id="submit" value="{{ _('Submit Comment') }}"/>
+    </p>
     {{ emit_event('after-comment-editor-rendered', post) }}
   {%- endcall %}
 {% endmacro %}
