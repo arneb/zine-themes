@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ cfg.language|e }}" xml:lang="{{ cfg.language|e }}">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+
+<title>{% block title %}{% endblock %} &mdash; {{ cfg.blog_title|e }}</title>
+
+<link rel="stylesheet" href="{{ shared_url('kubrick_theme::style.css') }}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{ shared_url(cfg['kubrick_theme/variation']) }}" type="text/css" media="screen" />
+{{ get_page_metadata() }}
+
+<style type="text/css" media="screen">
+	#page { background: url("{{ shared_url('kubrick_theme::images/kubrickbg-ltr.jpg') }}") repeat-y top; border: none; }
+/*	#page { background: url("{{ shared_url('kubrick_theme::images/kubrickbgwide.jpg') }}") repeat-y top; border: none; } */
+</style>
+
+</head>
+<body>
+<div id="page">
+
+
+<div id="header">
+	<div id="headerimg">
+		<h1><a href="{{ url_for('blog/index')|e }}">{{ cfg.blog_title|e }}</a></h1>
+		<div class="description">{{ cfg.blog_tagline }}</div>
+	</div>
+</div>
+<hr />
+
+
+{# ----- #}
+
+<div id="content" class="narrowcolumn">
+	{{ emit_event('before-contents-rendered') }}
+    {% block contents %}{% endblock %}
+    {{ emit_event('after-contents-rendered') }}
+</div>
+
+{# ------ #}
+
+<div id="sidebar">
+	<ul>
+		{{ render_widgets() }}
+	</ul>
+</div>
+
+{# ------ #}
+
+
+<hr />
+<div id="footer">
+<!-- If you'd like to support Zine, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
+	<p>{% trans zine='<a href="http://zine.pocoo.org/">Zine</a>',
+        theme='<a href="http://binarybonsai.com/wordpress/kubrick/">Kubrick theme</a>',
+        author='<a href="http://arnebrodowski.de/">Arne Brodowski</a>'
+        %}Proudly powered by {{ zine }}, {{ theme }} ported by {{ author }}.{% endtrans %}
+		<br /><br />
+	</p>
+</div>
+</div>
+
+<!-- Gorgeous design by Michael Heilemann - http://binarybonsai.com/kubrick/ -->
+<!-- "Just what do you think you're doing Dave?" -->
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "admin/layout.html" %}
+{% block title %}{{ _("Configure Kubrick Theme") }}{% endblock %}
+{% block contents %}
+  <h1>{{ _("Configure Kubrick Theme") }}</h1>
+  <p>{% trans %}
+    This theme comes with various color variations you can choose from.
+  {% endtrans %}
+  {%- call form() %}
+    {{ form.as_dl() }}
+    <div class="actions">
+      <input type="submit" name="save" value="{{ _('Save') }}">
+      <input type="submit" name="cancel" value="{{ _('Cancel') }}">
+    </div>
+  {%- endcall %}
+{% endblock %}

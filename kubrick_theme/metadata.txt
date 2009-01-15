@@ -1,0 +1,10 @@
+Name: Kubrick Theme
+Name[de]: Kubrick Thema
+Plugin URL: http://github.com/arneb/zine-themes/
+Author: Arne Brodowski
+Author URL: http://www.arnebrodowski.de/
+License: GPL
+Version: 0.1
+Summary: A port of the famous Kubrick theme by Michael Heilemann.
+Summary[de]: Eine Portierung des bekannten Kubrick Themas von Michael Heilemann.
+Preview: kubrick_theme::preview.png

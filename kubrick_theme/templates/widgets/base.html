@@ -1,0 +1,6 @@
+<li>
+  {{ emit_event('before-widget-rendered', widget) }}
+  {% if widget.show_title %}<h2>{% block title %}{% endblock %}</h2>{% endif %}
+  {% block body %}{% endblock %}
+  {{ emit_event('after-widget-rendered', widget) }}
+</li>

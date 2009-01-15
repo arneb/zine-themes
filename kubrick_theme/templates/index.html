@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}{{ _("Index") }}{% endblock %}
+{% from "_entry.html" import render_entry %}
+{% block contents %}
+  {%- for post in posts %}
+    {{ render_entry(post) }}
+  {%- else %}
+    <h2 class="center">{% trans %}Not Found{% endtrans %}</h2>
+    <p class="center">{% trans %}Sorry, but you are looking for something that isn't here.{% endtrans %}</p>
+  {%- endfor %}
+  {%- if pagination.necessary %}
+  <div class="pagination">
+    {{ pagination.generate() }}
+  </div>
+  {%- endif %}
+{% endblock %}
